@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="510.0" prefWidth="918.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddProductController">
+   <children>
+      <Group layoutX="62.0" layoutY="140.0">
+         <children>
+            <Label alignment="CENTER" style="&#10;" text="ID" textAlignment="CENTER" wrapText="false">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="28.0" style="&#10;" text="Name" textAlignment="CENTER" wrapText="false">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="55.0" style="&#10;" text="Inv" textAlignment="CENTER" wrapText="false">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="83.0" style="&#10;" text="Price/Cost" textAlignment="CENTER" wrapText="false">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="110.0" style="&#10;" text="Max" textAlignment="CENTER" wrapText="false">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <Text layoutX="62.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Product">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="AddProdID" disable="true" editable="false" layoutX="193.0" layoutY="144.0" promptText="Auto Gen - Disabled" style="-fx-font-style: italic;" />
+      <TextField fx:id="AddProdName" layoutX="193.0" layoutY="170.0" />
+      <TextField fx:id="AddProdInv" layoutX="193.0" layoutY="196.0" />
+      <TextField fx:id="AddProdPrice" layoutX="193.0" layoutY="222.0" prefWidth="150.0" />
+      <TextField fx:id="AddProdMax" layoutX="193.0" layoutY="248.0" prefWidth="150.0" />
+      <Label alignment="CENTER" layoutX="352.0" layoutY="251.0" style="&#10;" text="Min" textAlignment="CENTER" wrapText="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="AddProdMin" layoutX="383.0" layoutY="248.0" prefWidth="150.0" />
+      <Button fx:id="AddProdSave" layoutX="699.0" layoutY="427.0" mnemonicParsing="false" onAction="#onActionSaveProd" prefHeight="27.0" prefWidth="63.0" text="Save" />
+      <Button fx:id="AddProdCancel" layoutX="797.0" layoutY="427.0" mnemonicParsing="false" onAction="#onActionDisplayMainForm" prefHeight="27.0" prefWidth="63.0" text="Cancel" />
+      <Button fx:id="AddProdRemoveAssocPart" layoutX="699.0" layoutY="388.0" mnemonicParsing="false" onAction="#onActionRemoveAssociatedPart" prefHeight="27.0" prefWidth="161.0" text="Remove Associated Part" />
+      <Button fx:id="AddProdAddButton" layoutX="780.0" layoutY="195.0" mnemonicParsing="false" onAction="#onActionAdd" prefHeight="27.0" prefWidth="63.0" text="Add" />
+      <TextField fx:id="AddProdSearch" layoutX="710.0" layoutY="24.0" onAction="#onActionSearchParts" prefWidth="150.0" promptText="Search by Part ID or Name...">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <TableView fx:id="AssociatedPartTable" layoutX="555.0" layoutY="232.0" prefHeight="134.0" prefWidth="324.0" style="-fx-border-color: black;">
+         <columns>
+            <TableColumn fx:id="AssocPartTablePartID" prefWidth="52.800048828125" text="PartID" />
+            <TableColumn fx:id="AssocPartTablePartName" prefWidth="75.20001220703125" text="PartName" />
+            <TableColumn fx:id="AssocPartTableInvLvl" minWidth="0.0" prefWidth="104.00006103515625" text="Inventory Level" />
+            <TableColumn fx:id="AssocPartTableCost" prefWidth="87.199951171875" text="Cost per Unit" />
+         </columns>
+      </TableView>
+      <TableView fx:id="PartTable" layoutX="555.0" layoutY="53.0" prefHeight="134.0" prefWidth="324.0" style="-fx-border-color: black;">
+         <columns>
+            <TableColumn fx:id="PartTablePartID" prefWidth="52.800048828125" text="PartID" />
+            <TableColumn fx:id="PartTablePartName" prefWidth="75.20001220703125" text="PartName" />
+            <TableColumn fx:id="PartTableInvLvl" minWidth="0.0" prefWidth="104.00006103515625" text="Inventory Level" />
+            <TableColumn fx:id="PartTableCost" prefWidth="87.199951171875" text="Cost per Unit" />
+         </columns>
+      </TableView>
+      <MenuBar>
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="New" />
+                  <MenuItem mnemonicParsing="false" text="Open…" />
+                  <Menu mnemonicParsing="false" text="Open Recent" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" text="Save As…" />
+                  <MenuItem mnemonicParsing="false" text="Revert" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Preferences…" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Quit" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Undo" />
+                  <MenuItem mnemonicParsing="false" text="Redo" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Cut" />
+                  <MenuItem mnemonicParsing="false" text="Copy" />
+                  <MenuItem mnemonicParsing="false" text="Paste" />
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Select All" />
+                  <MenuItem mnemonicParsing="false" text="Unselect All" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

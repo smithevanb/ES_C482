@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
+   <children>
+      <MenuBar>
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="New" />
+                  <MenuItem mnemonicParsing="false" text="Open…" />
+                  <Menu mnemonicParsing="false" text="Open Recent" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" text="Save As…" />
+                  <MenuItem mnemonicParsing="false" text="Revert" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Preferences…" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Quit" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Undo" />
+                  <MenuItem mnemonicParsing="false" text="Redo" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Cut" />
+                  <MenuItem mnemonicParsing="false" text="Copy" />
+                  <MenuItem mnemonicParsing="false" text="Paste" />
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Select All" />
+                  <MenuItem mnemonicParsing="false" text="Unselect All" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Group layoutX="24.0" layoutY="33.0">
+         <children>
+            <Label alignment="CENTER" style="&#10;" text="Inventory Management System" textAlignment="CENTER" wrapText="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Pane layoutY="51.0" prefHeight="251.0" prefWidth="420.0" style="-fx-border-color: black;">
+               <children>
+                  <TableView fx:id="MFPartTable" layoutY="37.0" prefHeight="163.0" prefWidth="420.0" style="-fx-border-color: black;">
+                     <columns>
+                        <TableColumn fx:id="MFPartsTablePartID" prefWidth="75.0" text="PartID" />
+                        <TableColumn fx:id="MFPartsTablePartName" prefWidth="75.0" text="PartName" />
+                        <TableColumn fx:id="MFPartsTableInvLvl" prefWidth="146.39999389648438" text="Inventory Level" />
+                        <TableColumn fx:id="MFPartsTableCost" prefWidth="122.39999389648438" text="Cost per Unit" />
+                     </columns>
+                  </TableView>
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="Parts" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="MainFormPartsSearch" layoutX="257.0" layoutY="12.0" onAction="#onActionSearchPartsText" promptText="Search by Part ID or Name...">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="MainFormPartsAdd" layoutX="240.0" layoutY="212.0" mnemonicParsing="false" onAction="#onActionAddPart" text="Add" />
+                  <Button fx:id="MainFormPartsModify" layoutX="290.0" layoutY="212.0" mnemonicParsing="false" onAction="#onActionModifyPart" text="Modify" />
+                  <Button fx:id="MainFormPartsDelete" layoutX="355.0" layoutY="212.0" mnemonicParsing="false" onAction="#onActionDeletePart" text="Delete" />
+                  <Button fx:id="SearchPartsButton" layoutX="184.0" layoutY="10.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#onActionSearchParts" prefHeight="25.0" prefWidth="53.0" text="Search" />
+               </children>
+            </Pane>
+            <Pane layoutX="431.0" layoutY="51.0" prefHeight="251.0" prefWidth="420.0" style="-fx-border-color: black;">
+               <children>
+                  <TableView fx:id="MFProdsTable" layoutY="37.0" prefHeight="163.0" prefWidth="420.0" style="-fx-border-color: black;">
+                     <columns>
+                        <TableColumn fx:id="MFProdsTableProdID" prefWidth="75.0" text="ProductD" />
+                        <TableColumn fx:id="MFProdsTableProdName" prefWidth="100.7999267578125" text="ProductName" />
+                        <TableColumn fx:id="MFProdsTableInvLvl" prefWidth="120.800048828125" text="Inventory Level" />
+                        <TableColumn fx:id="MFProdsTableCost" prefWidth="122.39999389648438" text="Cost per Unit" />
+                     </columns>
+                  </TableView>
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="Products" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="MainFormProdSearch" layoutX="257.0" layoutY="12.0" onAction="#onActionSearchProductsText" promptText="Search by Product ID or Name...">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="MainFormProdAdd" layoutX="239.0" layoutY="214.0" mnemonicParsing="false" onAction="#onActionAddProd" text="Add" />
+                  <Button fx:id="MainFormProdModify" layoutX="289.0" layoutY="214.0" mnemonicParsing="false" onAction="#onActionModifyProd" text="Modify" />
+                  <Button fx:id="MainFormProdDelete" layoutX="354.0" layoutY="214.0" mnemonicParsing="false" onAction="#onActionDeleteProd" text="Delete" />
+                  <Button fx:id="ProductsSearchButton" layoutX="184.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#onActionSearchProducts" prefHeight="25.0" prefWidth="53.0" text="Search" />
+               </children>
+            </Pane>
+            <Button fx:id="MainFormExit" layoutX="791.0" layoutY="309.0" mnemonicParsing="false" onAction="#onActionExitMainForm" text="Exit" />
+         </children>
+      </Group>
+   </children>
+</AnchorPane>

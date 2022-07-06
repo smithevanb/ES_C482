@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddPartInHouseController">
+<children>
+    <MenuBar>
+        <menus>
+            <Menu mnemonicParsing="false" text="File">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="New" />
+                    <MenuItem mnemonicParsing="false" text="Open…" />
+                    <Menu mnemonicParsing="false" text="Open Recent" />
+                    <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                    <MenuItem mnemonicParsing="false" text="Save" />
+                    <MenuItem mnemonicParsing="false" text="Save As…" />
+                    <MenuItem mnemonicParsing="false" text="Revert" />
+                    <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" text="Preferences…" />
+                    <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" text="Quit" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Undo" />
+                    <MenuItem mnemonicParsing="false" text="Redo" />
+                    <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" text="Cut" />
+                    <MenuItem mnemonicParsing="false" text="Copy" />
+                    <MenuItem mnemonicParsing="false" text="Paste" />
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                    <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" text="Select All" />
+                    <MenuItem mnemonicParsing="false" text="Unselect All" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+    <Group layoutX="67.0" layoutY="78.0">
+        <children>
+            <RadioButton fx:id="AddPartRadioInHouse" layoutX="171.0" layoutY="6.423828125" mnemonicParsing="false" onAction="#onActionInHouseClicked" selected="true" text="In-House">
+                <toggleGroup>
+                    <ToggleGroup fx:id="AddPartTG" />
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="AddPartRadioOutsourced" layoutX="347.0" layoutY="6.423828125" mnemonicParsing="false" onAction="#onActionOutsourcedClicked" text="Outsourced" toggleGroup="$AddPartTG" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Part">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Text>
+            <TextField fx:id="AddPartID" editable="false" layoutX="131.0" layoutY="91.423828125" promptText="Auto Gen - Disabled" style="-fx-font-style: italic;" />
+            <TextField fx:id="AddPartName" layoutX="131.0" layoutY="117.423828125" />
+            <TextField fx:id="AddPartInv" layoutX="131.0" layoutY="143.423828125" />
+            <TextField fx:id="AddPartPrice" layoutX="131.0" layoutY="169.423828125" prefWidth="150.0" />
+            <TextField fx:id="AddPartMax" layoutX="131.0" layoutY="195.423828125" prefWidth="150.0" />
+            <TextField fx:id="AddPartMachineID" layoutX="131.0" layoutY="221.423828125" prefWidth="150.0" />
+            <Label alignment="CENTER" layoutX="309.0" layoutY="191.423828125" style="&#10;" text="Min" textAlignment="CENTER" wrapText="false">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <TextField fx:id="AddPartMin" layoutX="356.0" layoutY="192.423828125" prefWidth="150.0" />
+            <Button fx:id="AddPartSave" layoutX="280.0" layoutY="284.423828125" mnemonicParsing="false" onAction="#onActionSavePart" text="Save" />
+            <Button fx:id="AddPartCancel" layoutX="389.0" layoutY="284.423828125" mnemonicParsing="false" onAction="#onActionDisplayMainForm" text="Cancel" />
+            <Group layoutX="24.0" layoutY="87.0">
+                <children>
+                    <Label alignment="CENTER" style="&#10;" text="ID" textAlignment="CENTER" wrapText="false">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                    </Label>
+                    <Label alignment="CENTER" layoutY="28.0" style="&#10;" text="Name" textAlignment="CENTER" wrapText="false">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                    </Label>
+                    <Label alignment="CENTER" layoutY="55.0" style="&#10;" text="Inv" textAlignment="CENTER" wrapText="false">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                    </Label>
+                    <Label alignment="CENTER" layoutY="83.0" style="&#10;" text="Price/Cost" textAlignment="CENTER" wrapText="false">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                    </Label>
+                    <Label alignment="CENTER" layoutY="110.0" style="&#10;" text="Max" textAlignment="CENTER" wrapText="false">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                    </Label>
+                    <Label alignment="CENTER" layoutY="137.0" style="&#10;" text="Machine ID" textAlignment="CENTER" wrapText="false">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                    </Label>
+                </children>
+            </Group>
+        </children>
+    </Group>
+</children>
+</AnchorPane>
